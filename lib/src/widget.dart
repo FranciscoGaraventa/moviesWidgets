@@ -1,0 +1,11 @@
+export 'widgets/genres_gridview.dart';
+export 'widgets/genres_list.dart';
+export 'widgets/individual_genre.dart';
+export 'widgets/movie_backdrop_image.dart';
+export 'widgets/movie_card.dart';
+export 'widgets/movie_event_empty.dart';
+export 'widgets/movie_event_error.dart';
+export 'widgets/movie_event_initial.dart';
+export 'widgets/movie_overview.dart';
+export 'widgets/movie_rating_releasedate_lang.dart';
+export 'widgets/movies_gridview.dart';
