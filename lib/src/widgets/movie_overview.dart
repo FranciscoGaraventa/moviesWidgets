@@ -19,6 +19,7 @@ class MovieOverview extends StatelessWidget {
             children: [
               Text(
                 'OVERVIEW',
+                key: Key('overviewTitle'),
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: Dimension.movieOverviewFontSize,
@@ -30,6 +31,7 @@ class MovieOverview extends StatelessWidget {
         ),
         overview != ""
             ? Container(
+                key: Key('overviewNotEmpty'),
                 color: Colors.blueGrey.shade100,
                 child: Padding(
                   padding: EdgeInsets.all(Dimension.movieOverviewPadding),
@@ -44,6 +46,7 @@ class MovieOverview extends StatelessWidget {
                 ),
               )
             : Container(
+                key: Key('overviewEmpty'),
                 color: Colors.blueGrey.shade100,
                 child: Padding(
                   padding: EdgeInsets.all(Dimension.movieOverviewPadding),

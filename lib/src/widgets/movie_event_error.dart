@@ -20,6 +20,7 @@ class MovieEventError extends StatelessWidget {
             iconSize: Dimension.iconSearchTypeSize,
           ),
           RichText(
+            key: Key('errorMessage'),
             text: TextSpan(
               style: TextStyle(color: Colors.grey.shade700),
               children: [

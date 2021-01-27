@@ -21,6 +21,7 @@ class GenresGridView extends StatelessWidget {
             shrinkWrap: true,
             itemCount: genres.length,
             itemBuilder: (BuildContext context, int index) => IndividualGenre(
+              key: Key("genre_$index"),
               genreName: genres[index],
             ),
             staggeredTileBuilder: (int index) => StaggeredTile.fit(Dimension.staggeredTileFit),

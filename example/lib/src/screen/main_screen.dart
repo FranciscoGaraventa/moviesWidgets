@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
 
   List<WidgetRoute> _generateRoutes() {
     List<WidgetRoute> _routeList = [];
-    _routeList.add(WidgetRoute(title: 'MOVIES GENRES ', route: genresGridView));
+    _routeList.add(WidgetRoute(title: 'MOVIES GENRES', route: genresGridView));
     _routeList.add(WidgetRoute(title: 'GENRES LIST', route: genresList));
     _routeList.add(WidgetRoute(title: 'INDIVIDUAL GENRE', route: individualGenre));
     _routeList.add(WidgetRoute(title: 'MOVIE BACKDROP IMAGE', route: movieBackdrop));
@@ -61,8 +61,12 @@ class _MainScreenState extends State<MainScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(_widgetList[index].title),
+                    Text(
+                      _widgetList[index].title,
+                      key: Key(_widgetList[index].title),
+                    ),
                     ElevatedButton(
+                      key: Key("widgetButtonInfo_" + "$index"),
                       onPressed: () {
                         Navigator.pushNamed(context, _widgetList[index].route, arguments: _widgetList[index].title);
                       },

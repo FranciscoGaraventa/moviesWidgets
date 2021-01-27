@@ -24,7 +24,10 @@ class GenresList extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                  title: Text(genresList[index].name),
+                  title: Text(
+                    genresList[index].name,
+                    key: Key("genreTile_$index"),
+                  ),
                   onTap: () {
                     onTapAction?.call(context, genresList[index]);
                   },
@@ -32,8 +35,9 @@ class GenresList extends StatelessWidget {
               },
             )
           : MovieEventEmpty(
+              key: Key("eventEmptyGenreList"),
               icon: Icons.local_movies,
-              text: emptyStateText,
+              messageEmpty: emptyStateText,
               defaultImageRoute: defaultImageRoute,
             ),
     );

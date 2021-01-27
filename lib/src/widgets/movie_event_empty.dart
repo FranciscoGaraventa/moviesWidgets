@@ -3,14 +3,15 @@ import '../styles/dimensions.dart';
 
 class MovieEventEmpty extends StatelessWidget {
   final IconData icon;
-  final String text;
+  final String messageEmpty;
   final String defaultImageRoute;
 
   MovieEventEmpty({
+    Key key,
     this.icon,
-    this.text,
+    this.messageEmpty,
     this.defaultImageRoute,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class MovieEventEmpty extends StatelessWidget {
         children: [
           icon != null
               ? IconButton(
+                  key: Key('iconEmptyNotNull'),
                   icon: Icon(icon),
                   iconSize: Dimension.iconSearchTypeSize,
                 )
@@ -28,11 +30,12 @@ class MovieEventEmpty extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
           RichText(
+            key: Key('emptyMessage'),
             text: TextSpan(
               style: TextStyle(color: Colors.grey.shade700),
               children: [
                 TextSpan(
-                  text: text,
+                  text: messageEmpty,
                   style: TextStyle(fontSize: Dimension.searchEventTextFontSize, fontWeight: FontWeight.w600),
                 ),
               ],

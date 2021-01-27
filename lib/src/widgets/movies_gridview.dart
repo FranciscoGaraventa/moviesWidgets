@@ -23,6 +23,7 @@ class MoviesGridView extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: crossAxisCount),
       itemBuilder: (BuildContext context, int index) {
         return MovieCard(
+          key: Key('movieCard'+'_$index'),
           movie: movieList[index],
           onItemClick: onItemClick,
           defaultImageRoute: defaultImageRoute,
