@@ -44,6 +44,7 @@ class RatingReleaseLang extends StatelessWidget {
                 color: Colors.amber,
               ),
               RichText(
+                key: Key('voteAverage'),
                 text: TextSpan(
                   style: TextStyle(color: Colors.black),
                   children: [
@@ -65,6 +66,7 @@ class RatingReleaseLang extends StatelessWidget {
             children: <Widget>[
               Text('LANGUAGE'),
               RichText(
+                key: Key('language'),
                 text: TextSpan(
                   style: TextStyle(color: Colors.black),
                   children: [
@@ -85,6 +87,7 @@ class RatingReleaseLang extends StatelessWidget {
             children: <Widget>[
               Text('RELEASE DATE'),
               RichText(
+                key: Key('releaseDate'),
                 text: TextSpan(
                   style: TextStyle(color: Colors.black),
                   children: [

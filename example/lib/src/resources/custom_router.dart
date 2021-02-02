@@ -10,6 +10,7 @@ class NavigationRoutes {
       case homeRoute:
         return MaterialPageRoute(
           builder: (_) => MainScreen(
+            key: Key('mainScreen'),
             title: 'WIDGETS TEST',
           ),
         );
@@ -21,6 +22,7 @@ class NavigationRoutes {
             ),
             body: Center(
               child: GenresGridView(
+                key: Key('genresGridView'),
                 crossAxisCount: 2,
                 genres: [
                   'Action',
@@ -39,6 +41,7 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('genresList'),
               child: GenresList(
                 emptyStateText: 'GENRES UNAVAILABLE',
                 genresList: [
@@ -57,6 +60,7 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('individualGenre'),
               child: IndividualGenre(
                 genreName: 'Action',
               ),
@@ -69,11 +73,11 @@ class NavigationRoutes {
             appBar: AppBar(
               title: Text(title),
             ),
-            body: Center(
-                child: MovieBackdropImage(
+            body: MovieBackdropImage(
+              key: Key('movieBackdropImage'),
               movieId: 508442,
               backdropPath: 'https://image.tmdb.org/t/p/w780/kf456ZqeC45XTvo6W9pW5clYKfQ.jpg',
-            )),
+            ),
           ),
         );
       case movieCard:
@@ -83,6 +87,7 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('movieCard'),
                 child: MovieCard(
               movie: Movie(
                 id: 741228,
@@ -90,6 +95,7 @@ class NavigationRoutes {
                 title: "Locked Down",
                 backdropPath: 'https://image.tmdb.org/t/p/w780/4qu4kO5HVTKMK2hvmCXeviZ233l.jpg',
               ),
+              defaultImageRoute: '',
             )),
           ),
         );
@@ -100,6 +106,7 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('moviesGridView'),
               child: MoviesGridView(
                 movieList: [
                   Movie(
@@ -132,6 +139,7 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('ratingReleaseLang'),
               child: RatingReleaseLang(
                 voteAverage: 8.3,
                 originalLanguage: "en",
@@ -147,11 +155,12 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
+              key: Key('movieOverview'),
               child: MovieOverview(
                 overview:
-                        "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, "
-                        "Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and "
-                        "restore order to the universe once and for all, no matter what consequences may be in store.",
+                    "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, "
+                    "Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and "
+                    "restore order to the universe once and for all, no matter what consequences may be in store.",
               ),
             ),
           ),
@@ -163,23 +172,23 @@ class NavigationRoutes {
               title: Text(title),
             ),
             body: Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    MovieEventEmpty(
-                      icon: Icons.search,
-                      text: 'MOVIE EVENT EMPTY',
-                    ),
-                    MovieEventError(
-                      messageError: 'MESSAGE ERROR',
-                    ),
-                    MovieEventInitial(
-                      initialMessage: 'INITIAL MESSAGE',
-                    ),
-                  ],
-                ),
-              )
-            ),
+              key: Key('movieEvents'),
+                child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  MovieEventEmpty(
+                    icon: Icons.search,
+                    messageEmpty: 'MOVIE EVENT EMPTY',
+                  ),
+                  MovieEventError(
+                    messageError: 'MESSAGE ERROR',
+                  ),
+                  MovieEventInitial(
+                    initialMessage: 'INITIAL MESSAGE',
+                  ),
+                ],
+              ),
+            )),
           ),
         );
       default:
